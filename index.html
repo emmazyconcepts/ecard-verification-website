@@ -21,6 +21,10 @@
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
     <link
@@ -103,9 +107,9 @@
               class="header-btn header-btn-l-13 ms-auto d-none d-xs-inline-flex"
             >
               <a
-                target="_blank"
                 class="btn btn download-btn focus-reset"
-                href=""
+                href="#card-modal"
+                target="_self"
               >
                 Verify Now
               </a>
@@ -145,11 +149,6 @@
             >
               <div class="content">
                 <h1>Verify your Gift Card switfly</h1>
-                <p>
-                  Leverage our agile and efficient frameworks to provide a
-                  robust verification. Our smart algorithms run very fast to
-                  provide for you adequate info.
-                </p>
                 <div class="apps-btn">
                   <div class="wrapper">
                     <a class="cta" href="#">
@@ -191,12 +190,191 @@
                     </a>
                   </div>
                 </div>
+                <p>
+                  Leverage our agile and efficient frameworks to provide a
+                  robust verification. Our smart algorithms run very fast to
+                  provide for you adequate info.
+                </p>
               </div>
             </div>
           </div>
         </div>
         <div class="bg-shape-13"></div>
       </div>
+
+      <!-- card -->
+
+      <div class="login-root" id="card-modal">
+        <div
+          class="box-root flex-flex flex-direction--column"
+          style="flex-grow: 1"
+        >
+          <div class="loginbackground box-background--white padding-top--64">
+            <div class="loginbackground-gridContainer">
+              <div
+                class="box-root flex-flex"
+                style="grid-area: top / start / 8 / end"
+              >
+                <div class="box-root" style="flex-grow: 1"></div>
+              </div>
+              <div
+                class="box-root flex-flex"
+                style="grid-area: 4 / 2 / auto / 5"
+              >
+                <!-- <div
+                  class="box-root box-divider--light-all-2 animationLeftRight tans3s"
+                  style="flex-grow: 1"
+                ></div> -->
+              </div>
+              <!-- <div
+                class="box-root flex-flex"
+                style="grid-area: 6 / start / auto / 2"
+              >
+                <div
+                  class="box-root box-background--blue800"
+                  style="flex-grow: 1"
+                ></div>
+              </div> -->
+              <div
+                class="box-root flex-flex"
+                style="grid-area: 7 / start / auto / 4"
+              >
+                <div
+                  class="box-root box-background--blue animationLeftRight"
+                  style="flex-grow: 1"
+                ></div>
+              </div>
+              <div
+                class="box-root flex-flex"
+                style="grid-area: 8 / 4 / auto / 6"
+              >
+                <div
+                  class="box-root box-background--gray100 animationLeftRight tans3s"
+                  style="flex-grow: 1"
+                ></div>
+              </div>
+              <!-- <div
+                class="box-root flex-flex"
+                style="grid-area: 2 / 15 / auto / end"
+              >
+                <div
+                  class="box-root box-background--cyan200 animationRightLeft tans4s"
+                  style="flex-grow: 1"
+                ></div>
+              </div> -->
+              <!-- <div
+                class="box-root flex-flex"
+                style="grid-area: 3 / 14 / auto / end"
+              >
+                <div
+                  class="box-root box-background--blue animationRightLeft"
+                  style="flex-grow: 1"
+                ></div>
+              </div> -->
+              <div
+                class="box-root flex-flex"
+                style="grid-area: 4 / 17 / auto / 20"
+              >
+                <div
+                  class="box-root box-background--gray100 animationRightLeft tans4s"
+                  style="flex-grow: 1"
+                ></div>
+              </div>
+              <div
+                class="box-root flex-flex"
+                style="grid-area: 5 / 14 / auto / 17"
+              >
+                <div
+                  class="box-root box-divider--light-all-2 animationRightLeft tans3s"
+                  style="flex-grow: 1"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="box-root padding-top--24 flex-flex flex-direction--column"
+            style="flex-grow: 1; z-index: 9"
+          >
+            <div class="formbg-outer">
+              <div class="formbg">
+                <div class="formbg-inner padding-horizontal--48 text-center">
+                  <span
+                    class="padding-bottom--15 margin-bottom-24"
+                    style="font-size: 24px"
+                  >
+                    All Gift Cards Checker
+                  </span>
+                  <form id="stripe-login">
+                    <select
+                      required=""
+                      name="cardName"
+                      class="form-select"
+                      style="border-radius: 64px; margin-top: 10px"
+                      placeholder="Select type of card"
+                    >
+                      <option value="" class="">Select type of card</option>
+                      <option value="iTunes">iTunes</option>
+                      <option value="Amazon">Amazon</option>
+                      <option value="Steam">Steam</option>
+                      <option value="eBay">eBay</option>
+                      <option value="Xbox">Xbox</option>
+                      <option value="Googleplay">Googleplay</option>
+                      <option value="PlayStation">PlayStation</option>
+                      <option value="Sephora">Sephora</option>
+                      <option value="Nordstrom">Nordstrom</option>
+                      <option value="Nike">Nike</option>
+                      <option value="MasterCard">MasterCard</option>
+                      <option value="Vanilla">Vanilla</option>
+                      <option value="Wallmart Visa">Wallmart Visa</option>
+                      <option value="Visa Silvery White">
+                        Visa Silvery White
+                      </option>
+                      <option value="TT Visa">TT Visa</option>
+                      <option value="Amex">Amex</option>
+                    </select>
+
+                    <select
+                      required=""
+                      name="currency"
+                      class="form-select"
+                      style="border-radius: 64px; margin-top: 15px"
+                      placeholder="Select type of card"
+                    >
+                      <option value="USD">USD</option>
+                      <option value="GBP">GBP</option>
+                      <option value="AUD">AUD</option>
+                      <option value="EUR">EUR</option>
+                      <option value="CAD">CAD</option>
+                    </select>
+                    <div
+                      class="field padding-bottom--28"
+                      style="margin-top: 20px"
+                    >
+                      <input type="number" placeholder=" Card Amount" />
+                    </div>
+                    <div
+                      class="field padding-bottom--24"
+                      style="margin-top: 20px"
+                    >
+                      <input type="number" placeholder=" Gift Card Pin" />
+                    </div>
+                    <div class="field padding-bottom--24">
+                      <input type="number" placeholder=" Redemption Code" />
+                    </div>
+
+                    <div class="field padding-bottom--24">
+                      <input type="submit" name="submit" value="Continue" />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- end of card  -->
+
       <!-- content-1 section start -->
       <div class="content-area-l-13-1 position-relative overflow-hidden">
         <div class="container">
@@ -215,10 +393,12 @@
                         data-aos-once="true"
                       >
                         <div class="content section-heading-7">
-                          <h2>Build Beautiful Landing Pages</h2>
+                          <h2>Decentralized</h2>
                           <p>
-                            Create custom landing pages with Shades that convert
-                            more visitors than any website, no coding required.
+                            Our smart frameworks is built on a decentralized
+                            platform to ensure clients gift card details are not
+                            stored anywhere in the server. Your card details are
+                            immediately deleted after verification operations.
                           </p>
                         </div>
                       </div>
@@ -276,10 +456,11 @@
                         data-aos-once="true"
                       >
                         <div class="content section-heading-7">
-                          <h2>Build Beautiful Landing Pages</h2>
+                          <h2>Secured and Encrypted</h2>
                           <p>
-                            Create custom landing pages with Shades that convert
-                            more visitors than any website, no coding required.
+                            We at Card-ly makes sure customers giftcard details
+                            are secured and encrypted. No attacker or false
+                            identity can intercept your verification operations
                           </p>
                         </div>
                       </div>
@@ -309,10 +490,12 @@
                         data-aos-once="true"
                       >
                         <div class="content section-heading-7">
-                          <h2>Build Beautiful Landing Pages</h2>
+                          <h2>High performance</h2>
                           <p>
-                            Create custom landing pages with Shades that convert
-                            more visitors than any website, no coding required.
+                            Our smart algorithms run very fast to provide for
+                            you adequate info about your giftcard. We value our
+                            customers time, that is why you can get a fast
+                            response on your request
                           </p>
                         </div>
                       </div>
@@ -338,140 +521,7 @@
           </div>
         </div>
       </div>
-      <!-- Testimonial section start -->
-      <div
-        class="testimonial-area-l-13 position-relative overflow-hidden z-index-1"
-      >
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-xl-11">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="section-heading-7 text-center">
-                    <h2>Customers are loving Shades</h2>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="row testimonial-area-l-13-items justify-content-center"
-                data-aos="fade-right"
-                data-aos-duration="800"
-                data-aos-once="true"
-              >
-                <div class="col-xl-4 col-md-6 col-sm-8">
-                  <div class="testimonial-card bg-white">
-                    <p>
-                      “You made it so simple. My new site is so much faster and
-                      easier to work with than my old site. I just choose the
-                      page, make the change and click save.
-                    </p>
-                    <div class="d-flex customer-identity">
-                      <div class="customer-img">
-                        <img src="image/l3/client-img-2.png" alt="" />
-                      </div>
-                      <div class="content-body">
-                        <h5>Cameron Anderson</h5>
-                        <p>Designer</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-8">
-                  <div class="testimonial-card bg-white">
-                    <p>
-                      “You made it so simple. My new site is so much faster and
-                      easier to work with than my old site. I just choose the
-                      page, make the change and click save.
-                    </p>
-                    <div class="d-flex customer-identity">
-                      <div class="customer-img">
-                        <img src="image/l3/client-img-2.png" alt="" />
-                      </div>
-                      <div class="content-body">
-                        <h5>Cameron Anderson</h5>
-                        <p>Designer</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-8">
-                  <div class="testimonial-card bg-white">
-                    <p>
-                      “You made it so simple. My new site is so much faster and
-                      easier to work with than my old site. I just choose the
-                      page, make the change and click save.
-                    </p>
-                    <div class="d-flex customer-identity">
-                      <div class="customer-img">
-                        <img src="image/l3/client-img-2.png" alt="" />
-                      </div>
-                      <div class="content-body">
-                        <h5>Cameron Anderson</h5>
-                        <p>Designer</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-8">
-                  <div class="testimonial-card bg-white">
-                    <p>
-                      “You made it so simple. My new site is so much faster and
-                      easier to work with than my old site. I just choose the
-                      page, make the change and click save.
-                    </p>
-                    <div class="d-flex customer-identity">
-                      <div class="customer-img">
-                        <img src="image/l3/client-img-2.png" alt="" />
-                      </div>
-                      <div class="content-body">
-                        <h5>Cameron Anderson</h5>
-                        <p>Designer</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-8">
-                  <div class="testimonial-card bg-white">
-                    <p>
-                      “You made it so simple. My new site is so much faster and
-                      easier to work with than my old site. I just choose the
-                      page, make the change and click save.
-                    </p>
-                    <div class="d-flex customer-identity">
-                      <div class="customer-img">
-                        <img src="image/l3/client-img-2.png" alt="" />
-                      </div>
-                      <div class="content-body">
-                        <h5>Cameron Anderson</h5>
-                        <p>Designer</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-8">
-                  <div class="testimonial-card bg-white">
-                    <p>
-                      “You made it so simple. My new site is so much faster and
-                      easier to work with than my old site. I just choose the
-                      page, make the change and click save.
-                    </p>
-                    <div class="d-flex customer-identity">
-                      <div class="customer-img">
-                        <img src="image/l3/client-img-2.png" alt="" />
-                      </div>
-                      <div class="content-body">
-                        <h5>Cameron Anderson</h5>
-                        <p>Designer</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bg-shape-3"></div>
-      </div>
+
       <!-- CTA-area start -->
       <div
         class="cta-area-l-13"
@@ -485,18 +535,18 @@
               <div class="row justify-content-center">
                 <div class="col-xxl-7 col-xl-8 text-center">
                   <div class="content">
-                    <span class="tagline">Time to take action</span>
                     <h2>
-                      Join over 30,000+ happy users & launch your product fast.
+                      Over 8000+ giftcards verified on our site. Verify yours
+                      now
                     </h2>
-                    <div class="apps-btn">
-                      <a href="#" class="app-store"
-                        ><img src="image/l3/app-store.png" alt=""
-                      /></a>
-                      <a href="#" class="app-store"
-                        ><img src="image/l3/google-play.png" alt=""
-                      /></a>
+                    <div class="text-box">
+                      <a href="#card-modal" class="btn btn-black btn- animate"
+                        >Try it for free</a
+                      >
                     </div>
+                    <!-- <a href="#" class="app-store"
+                        ><img src="image/l3/google-play.png" alt=""
+                      /></a> -->
                   </div>
                 </div>
               </div>
@@ -506,7 +556,7 @@
       </div>
       <!-- Footer Area -->
       <footer class="footer-l-13 text-center text-md-start">
-        <div class="container">
+        <div class="">
           <div class="row">
             <div class="col-lg-12">
               <div class="footer-border-l-13"></div>
@@ -525,17 +575,14 @@
                 <ul
                   class="pl-0 list-unstyled d-flex flex-wrap justify-content-center align-items-end"
                 >
-                  <li class="d-flex"><a href="">About</a></li>
-                  <li class="d-flex"><a href="">Features</a></li>
-                  <li class="d-flex"><a href="">Works</a></li>
-                  <li class="d-flex"><a href="">Career</a></li>
-                  <li class="d-flex"><a href="">Contact</a></li>
+                  <li class="d-flex"><a href="">Services</a></li>
+                  <li class="d-flex"><a href="">Contact Us</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-md-3">
               <div class="copyright-area-l-13 text-center text-md-right">
-                <p>© Grayic 2021 All right reserved.</p>
+                <p>© Shades 2021 All right reserved.</p>
               </div>
             </div>
           </div>
@@ -548,5 +595,6 @@
     <script src="./plugins/menu/menu.js"></script>
     <!-- Activation Script -->
     <script src="js/custom.js"></script>
+    <script src="js/card.js"></script>
   </body>
 </html>

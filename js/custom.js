@@ -31,7 +31,9 @@ $("select.form-select").change(function () {
   }
 
   if ($("select").val() == "Nordstrom") {
-    document.getElementById("form").style.display = "block";
+    document.getElementById("form5").style.display = "block";
+  } else {
+    document.getElementById("form5").style.display = "none";
   }
 
   if ($("select").val() == "Sephora") {
@@ -47,30 +49,38 @@ $("select.form-select").change(function () {
   if ($("select").val() == "Vanilla") {
     document.getElementById("form").style.display = "block";
     document.getElementById("form2").style.display = "block";
+    document.getElementById("form0").style.display = "block";
   } else {
     document.getElementById("form2").style.display = "none";
+    document.getElementById("form0").style.display = "none";
   }
 
   if ($("select").val() == "Wallmart Visa") {
     document.getElementById("form").style.display = "block";
     document.getElementById("form2").style.display = "block";
+    document.getElementById("form0").style.display = "block";
   }
 
   if ($("select").val() == "Visa Silvery White") {
     document.getElementById("form").style.display = "block";
     document.getElementById("form2").style.display = "block";
+    document.getElementById("form0").style.display = "block";
   }
 
   if ($("select").val() == "TT Visa") {
     document.getElementById("form").style.display = "block";
     document.getElementById("form2").style.display = "block";
+    document.getElementById("form0").style.display = "block";
   }
 
   if ($("select").val() == "Amex") {
     document.getElementById("form4").style.display = "block";
     document.getElementById("form2").style.display = "block";
     document.getElementById("form3").style.display = "block";
+    document.getElementById("form01").style.display = "block";
   } else {
+    document.getElementById("form01").style.display = "none";
+
     document.getElementById("form4").style.display = "none";
     document.getElementById("form3").style.display = "none";
   }

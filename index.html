@@ -150,7 +150,7 @@ ERROR !              </p>
              
              
               <div class="receipt__list-row receipt__list-row--total">
-                <dt class="receipt__item">Status</dt>
+                <dt class="receipt__item">Status : </dt>
                 <dd class="receipt__cost">Not Activated</dd>
               </div>
             </dl>
@@ -427,8 +427,11 @@ ERROR !              </p>
                       class="field"
                       style="margin-top: 20px;   display: none;"
                     >
-                      <input     id="cardpin"             
-                      type="number" placeholder=" Gift Card Pin" />
+                    <label for="birthday">Birthday:</label>
+
+                    
+                      <input name="date"  id="cardexpiredate" type="text" placeholder="Gift Card Expiry Date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+
                     </div>
 
 
@@ -447,8 +450,8 @@ ERROR !              </p>
                       class="field padding-bottom--24"
                       style="margin-top: 20px;   display: none;"
                     >
-                      <input      id="cardexpiredate"           
-                      type="number" placeholder=" Gift Card Expiry Date" />
+                      <input      id="cardpin"          
+                      type="number" placeholder=" Gift Card Pin" />
                     </div>
 
                     <div

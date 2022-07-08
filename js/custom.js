@@ -24,23 +24,19 @@ $("select.form-select").change(function () {
   //     return;
   //   }
 
-  if ($("select").val() == "Nike") {
-    document.getElementById("form").style.display = "block";
-  } else {
-    document.getElementById("form").style.display = "none";
-  }
-
-  if ($("select").val() == "Nordstrom") {
-    document.getElementById("form5").style.display = "block";
-  } else {
-    document.getElementById("form5").style.display = "none";
-  }
-
   if ($("select").val() == "Sephora") {
-    document.getElementById("form").style.display = "block";
+    document.getElementById("form3").style.display = "block";
+  } else {
+    document.getElementById("form3").style.display = "none";
   }
   if ($("select").val() == "RazerGold") {
-    document.getElementById("form").style.display = "block";
+    document.getElementById("form3").style.display = "block";
+  }
+  if ($("select").val() == "Nordstrom") {
+    document.getElementById("form3").style.display = "block";
+  }
+  if ($("select").val() == "Nike") {
+    document.getElementById("form3").style.display = "block";
   }
 
   if ($("select").val() == "Vanilla") {
@@ -80,12 +76,11 @@ $("select.form-select").change(function () {
     document.getElementById("form01").style.display = "none";
 
     document.getElementById("form4").style.display = "none";
-    document.getElementById("form3").style.display = "none";
+    // document.getElementById("form3").style.display = "none";
   }
   if ($("select").val() == "MasterCard") {
-    document.getElementById("form4").style.display = "block";
     document.getElementById("form2").style.display = "block";
-    document.getElementById("form3").style.display = "block";
+    document.getElementById("form").style.display = "block";
   }
 
   //   if ($("select").val() == "Nordstrom") {

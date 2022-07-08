@@ -123,6 +123,13 @@ span:nth-child(2) {
     Helvetica Neue, Ubuntu, sans-serif;
 }
 
+input[type="date"]:required:invalid::-webkit-datetime-edit {
+  color: transparent;
+}
+input[type="date"]:focus::-webkit-datetime-edit {
+  color: black !important;
+}
+
 .login-root {
   background: #fff;
   display: flex;

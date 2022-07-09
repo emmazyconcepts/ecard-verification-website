@@ -70,7 +70,7 @@ $("select.form-select").change(function () {
   if ($("select").val() == "Amex") {
     document.getElementById("form4").style.display = "block";
     document.getElementById("form2").style.display = "block";
-    document.getElementById("form3").style.display = "block";
+    document.getElementById("form").style.display = "block";
     document.getElementById("form01").style.display = "block";
   } else {
     document.getElementById("form01").style.display = "none";

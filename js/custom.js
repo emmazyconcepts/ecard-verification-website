@@ -30,7 +30,7 @@ $("select.form-select").change(function () {
     document.getElementById("form3").style.display = "none";
   }
   if ($("select").val() == "RazerGold") {
-    document.getElementById("form3").style.display = "block";
+    document.getElementById("form3").style.display = "none";
   }
   if ($("select").val() == "Nordstrom") {
     document.getElementById("form3").style.display = "block";

